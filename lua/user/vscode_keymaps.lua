@@ -39,15 +39,34 @@ keymap("n", "<Esc>", "<Esc>:noh<CR>", opts)
 
 -- general keymaps
 keymap({"n", "v"}, "<leader>t", "<cmd>lua require('vscode').action('workbench.action.terminal.toggleTerminal')<CR>")
-keymap({"n", "v"}, "<leader>b", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
+-- keymap({"n", "v"}, "<leader>b", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
 keymap({"n", "v"}, "<leader>d", "<cmd>lua require('vscode').action('editor.action.showHover')<CR>")
 keymap({"n", "v"}, "<leader>a", "<cmd>lua require('vscode').action('editor.action.quickFix')<CR>")
 keymap({"n", "v"}, "<leader>sp", "<cmd>lua require('vscode').action('workbench.actions.view.problems')<CR>")
 keymap({"n", "v"}, "<leader>cn", "<cmd>lua require('vscode').action('notifications.clearAll')<CR>")
 keymap({"n", "v"}, "<leader>ff", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>")
 keymap({"n", "v"}, "<leader>cp", "<cmd>lua require('vscode').action('workbench.action.showCommands')<CR>")
-keymap({"n", "v"}, "<leader>pr", "<cmd>lua require('vscode').action('code-runner.run')<CR>")
-keymap({"n", "v"}, "<leader>fd", "<cmd>lua require('vscode').action('editor.action.formatDocument')<CR>")
+-- keymap({"n", "v"}, "<leader>pr", "<cmd>lua require('vscode').action('code-runner.run')<CR>")
+-- keymap({"n", "v"}, "<leader>fd", "<cmd>lua require('vscode').action('editor.action.formatDocument')<CR>")
+
+
+-- vscode python debug
+keymap("n", "<C-k>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
+keymap("n", "<A-j>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOver')")
+keymap("n", "<A-k>", "<cmd>lua require('vscode').action('workbench.action.debug.continue')")
+keymap("n", "<A-h>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOut')")
+keymap("n", "<A-l>", "<cmd>lua require('vscode').action('workbench.action.debug.stepInto')")
+keymap("n", "<A-r>", "<cmd>lua require('vscode').action('workbench.action.debug.restart')")
+-- keymap("n", "<A-r>", "<cmd>lua require('vscode').action('workbench.action.debug.start')")
+
+
+-- open outline
+keymap({"n", "v"}, "<leader>o", "<cmd>lua require('vscode').action('outline.focus')<CR>")
+keymap({"n", "v"}, "<leader>1", "<cmd>lua require('vscode').action('workbench.action.focusFirstEditorGroup')<CR>")
+keymap({"n", "v"}, "<leader>2", "<cmd>lua require('vscode').action('workbench.action.focusSecondEditorGroup')<CR>")
+keymap({"n", "v"}, "<leader>kb", "<cmd>lua require('vscode').action('workbench.action.openGlobalKeybindings')<CR>")
+keymap({"n", "v"}, "<leader>us", "<cmd>lua require('vscode').action('workbench.action.openSettingsJson')<CR>")
+
 
 -- harpoon keymaps
 keymap({"n", "v"}, "<leader>ha", "<cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>")
@@ -67,5 +86,8 @@ keymap({"n", "v"}, "<leader>h9", "<cmd>lua require('vscode').action('vscode-harp
 keymap({"n", "v"}, "<leader>pa", "<cmd>lua require('vscode').action('projectManager.saveProject')<CR>")
 keymap({"n", "v"}, "<leader>po", "<cmd>lua require('vscode').action('projectManager.listProjectsNewWindow')<CR>")
 keymap({"n", "v"}, "<leader>pe", "<cmd>lua require('vscode').action('projectManager.editProjects')<CR>")
+
+print(vim.g.mapleader)
+print("The leader key is ", vim.g.mapleader)
 
 return false
