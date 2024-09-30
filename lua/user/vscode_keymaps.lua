@@ -1,11 +1,13 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+
 -- ignorecase
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- easy motion
+vim.g.EasyMotion_prompt = ""
 keymap({"n", "v"}, "<leader><leader>", "<Plug>(easymotion-s2)", opts)
 
 -- yank to system clipboard
@@ -66,6 +68,8 @@ keymap({"n", "v"}, "<leader>1", "<cmd>lua require('vscode').action('workbench.ac
 keymap({"n", "v"}, "<leader>2", "<cmd>lua require('vscode').action('workbench.action.focusSecondEditorGroup')<CR>")
 keymap({"n", "v"}, "<leader>kb", "<cmd>lua require('vscode').action('workbench.action.openGlobalKeybindings')<CR>")
 keymap({"n", "v"}, "<leader>us", "<cmd>lua require('vscode').action('workbench.action.openSettingsJson')<CR>")
+keymap({"n", "v"}, "<leader>b", "<cmd>lua require('vscode').action('workbench.action.toggleSidebarVisibility')<CR>")
+
 
 
 -- harpoon keymaps
@@ -87,7 +91,7 @@ keymap({"n", "v"}, "<leader>pa", "<cmd>lua require('vscode').action('projectMana
 keymap({"n", "v"}, "<leader>po", "<cmd>lua require('vscode').action('projectManager.listProjectsNewWindow')<CR>")
 keymap({"n", "v"}, "<leader>pe", "<cmd>lua require('vscode').action('projectManager.editProjects')<CR>")
 
-print(vim.g.mapleader)
-print("The leader key is ", vim.g.mapleader)
+-- print(vim.g.mapleader)
+-- print("The leader key is ", vim.g.mapleader)
 
 return false

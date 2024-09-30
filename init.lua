@@ -1,5 +1,8 @@
 local opts = { noremap = true, silent = true }
 
+-- system clipboard
+vim.opt.clipboard = "unnamed,unnamedplus"
+
 -- remap leader key
 vim.keymap.set("n", "<Space>", "<Nop>", opts)
 
