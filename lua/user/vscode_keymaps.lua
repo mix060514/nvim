@@ -6,6 +6,9 @@ local opts = { noremap = true, silent = true }
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+--clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- easy motion
 vim.g.EasyMotion_prompt = ""
 keymap({"n", "v"}, "<leader><leader>", "<Plug>(easymotion-s2)", opts)
