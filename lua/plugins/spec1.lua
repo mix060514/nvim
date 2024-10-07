@@ -31,7 +31,6 @@ return {
     --     dependencies = {"easymotion/vim-easymotion"} 
     -- },
 
-    -- {"<leader><leader>", "<cmd>lua require('hop').hint_char2()<cr>"},
     {
         'smoka7/hop.nvim',
         version = "*",
@@ -39,7 +38,9 @@ return {
             keys = 'etovxqpdygfblzhckisuran'
         },
         keys = {
-            {"<leader><leader>", "<cmd>lua require('hop').hint_char1()<cr>"},
+            -- {"<leader><leader>", "<cmd>lua require('hop').hint_char2()<cr>"},
+            -- {"<leader><leader>", "<cmd>lua require('hop').hint_char1()<cr>"},
+            {"f", "<cmd>lua require('hop').hint_char1()<cr>", mode = {"n"}, desc = "Hop char"},
         },
     },
     {
@@ -47,7 +48,7 @@ return {
         config = function()
             -- require('argwrap').setup()
             vim.g.argwrap_comma_first = 1
-            vim.g.argwrap_wrap_closing_brace = 0
+            vim.g.argwrap_wrap_closing_brace = 1
         end,
         keys = {
             {"<leader>s", "<cmd>ArgWrap<cr>"},
