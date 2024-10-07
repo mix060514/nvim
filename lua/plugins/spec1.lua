@@ -42,4 +42,16 @@ return {
             {"<leader><leader>", "<cmd>lua require('hop').hint_char1()<cr>"},
         },
     },
+    {
+        'https://git.foosoft.net/alex/vim-argwrap',
+        config = function()
+            -- require('argwrap').setup()
+            vim.g.argwrap_comma_first = 1
+            vim.g.argwrap_wrap_closing_brace = 0
+        end,
+        keys = {
+            {"<leader>s", "<cmd>ArgWrap<cr>"},
+        }
+    },
 }
+
