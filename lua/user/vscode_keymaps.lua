@@ -6,19 +6,6 @@ local opts = { noremap = true, silent = true }
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
---clipboard
-vim.opt.clipboard = "unnamedplus"
-
--- easy motion
--- keymap({"n", "v"}, "<leader><leader>", "<Plug>(easymotion-s2)", opts)
--- keymap({"n", "v"}, "<leader><leader>", "<Plug>(easymotion-s)", opts)
-
--- yank to system clipboard
-keymap({"n", "v"}, "<leader>y", '"+y', opts)
-
--- paste from system clipboard
-keymap({"n", "v"}, "<leader>p", '"+p', opts)
-
 -- L to $ and H to $
 keymap({"n", "v", "o"}, "L", "$", opts)
 keymap({"n", "v", "o"}, "H", "^", opts)
@@ -39,8 +26,17 @@ keymap("v", "p", '"_dP', opts)
 -- removes highlighting after escaping vim search
 keymap("n", "<Esc>", "<Esc>:noh<CR>", opts)
 
+-- insert cell #%%
+keymap("n", "<leader>ic", "o#%%<ESC>", opts)
+
+
+
 
 -- call vscode commands from neovim
+
+-- vscode interactive window move up and down by cell
+keymap({"n"}, "<C-j>", "<cmd>lua require('vscode').action('jupyter.gotoNextCellInFile')<CR>")
+keymap({"n"}, "<C-k>", "<cmd>lua require('vscode').action('jupyter.gotoPrevCellInFile')<CR>")
 
 -- general keymaps
 keymap({"n", "v"}, "<leader>t", "<cmd>lua require('vscode').action('workbench.action.terminal.toggleTerminal')<CR>")
@@ -49,14 +45,15 @@ keymap({"n", "v"}, "<leader>d", "<cmd>lua require('vscode').action('editor.actio
 keymap({"n", "v"}, "<leader>a", "<cmd>lua require('vscode').action('editor.action.quickFix')<CR>")
 -- keymap({"n", "v"}, "<leader>sp", "<cmd>lua require('vscode').action('workbench.actions.view.problems')<CR>")
 keymap({"n", "v"}, "<leader>cn", "<cmd>lua require('vscode').action('notifications.clearAll')<CR>")
-keymap({"n", "v"}, "<leader>ff", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>")
+keymap({"n", "v"}, "<leader>qo", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>")
 keymap({"n", "v"}, "<leader>cp", "<cmd>lua require('vscode').action('workbench.action.showCommands')<CR>")
 -- keymap({"n", "v"}, "<leader>pr", "<cmd>lua require('vscode').action('code-runner.run')<CR>")
 -- keymap({"n", "v"}, "<leader>fd", "<cmd>lua require('vscode').action('editor.action.formatDocument')<CR>")
 
 
 -- vscode python debug
-keymap("n", "<C-k>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
+-- keymap("n", "<C-k>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
+keymap("n", "<A-b>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
 keymap("n", "<A-j>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOver')")
 keymap("n", "<A-k>", "<cmd>lua require('vscode').action('workbench.action.debug.continue')")
 keymap("n", "<A-h>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOut')")
@@ -66,7 +63,7 @@ keymap("n", "<A-r>", "<cmd>lua require('vscode').action('workbench.action.debug.
 
 
 -- open outline
-keymap({"n", "v"}, "<leader>o", "<cmd>lua require('vscode').action('outline.focus')<CR>")
+keymap({"n", "v"}, "<leader>ol", "<cmd>lua require('vscode').action('outline.focus')<CR>")
 keymap({"n", "v"}, "<leader>1", "<cmd>lua require('vscode').action('workbench.action.focusFirstEditorGroup')<CR>")
 keymap({"n", "v"}, "<leader>2", "<cmd>lua require('vscode').action('workbench.action.focusSecondEditorGroup')<CR>")
 keymap({"n", "v"}, "<leader>kb", "<cmd>lua require('vscode').action('workbench.action.openGlobalKeybindings')<CR>")
