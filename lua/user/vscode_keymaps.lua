@@ -1,5 +1,6 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local nopts = { remap = true, silent = true }
 
 
 -- ignorecase
@@ -29,8 +30,14 @@ keymap("n", "<Esc>", "<Esc>:noh<CR>", opts)
 -- insert cell #%%
 keymap("n", "<leader>ic", "o#%%<ESC>", opts)
 
+-- next tab and previous tab
+keymap("n", "J", "gT", nopts)
+keymap("n", "K", "gt", nopts)
+-- keymap("n", "<tab>", "gT", nopts)
+-- keymap("n", "<s-tab>", "gt", nopts)
 
-
+-- merge lines
+keymap("n", "gj", "J", opts)
 
 -- call vscode commands from neovim
 
