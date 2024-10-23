@@ -7,6 +7,11 @@ local nopts = { remap = true, silent = true }
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- move between method in python .py file
+keymap("n", "<Bslash>", "]m", nopts)
+keymap("n", "<Bar>", "[m", nopts)
+
+
 -- L to $ and H to $
 keymap({"n", "v", "o"}, "L", "$", opts)
 keymap({"n", "v", "o"}, "H", "^", opts)
