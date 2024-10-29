@@ -47,8 +47,8 @@ keymap("n", "gj", "J", opts)
 -- call vscode commands from neovim
 
 -- vscode interactive window move up and down by cell
-keymap({"n"}, "<C-j>", "<cmd>lua require('vscode').action('jupyter.gotoNextCellInFile')<CR>")
-keymap({"n"}, "<C-k>", "<cmd>lua require('vscode').action('jupyter.gotoPrevCellInFile')<CR>")
+-- keymap({"n"}, "<C-j>", "<cmd>lua require('vscode').action('jupyter.gotoNextCellInFile')<CR>")
+-- keymap({"n"}, "<C-k>", "<cmd>lua require('vscode').action('jupyter.gotoPrevCellInFile')<CR>")
 
 -- general keymaps
 keymap({"n", "v"}, "<leader>t", "<cmd>lua require('vscode').action('workbench.action.terminal.toggleTerminal')<CR>")
