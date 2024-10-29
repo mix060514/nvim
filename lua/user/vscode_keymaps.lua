@@ -65,7 +65,7 @@ keymap({"n", "v"}, "<leader>cp", "<cmd>lua require('vscode').action('workbench.a
 
 -- vscode python debug
 -- keymap("n", "<C-k>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
-keymap("n", "<A-b>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
+keymap("n", "<A-u>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
 keymap("n", "<A-j>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOver')")
 keymap("n", "<A-k>", "<cmd>lua require('vscode').action('workbench.action.debug.continue')")
 keymap("n", "<A-h>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOut')")
