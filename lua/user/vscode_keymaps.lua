@@ -66,11 +66,12 @@ keymap({"n", "v"}, "<leader>cp", "<cmd>lua require('vscode').action('workbench.a
 -- vscode python debug
 -- keymap("n", "<C-k>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
 keymap("n", "<A-u>", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
-keymap("n", "<A-j>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOver')")
-keymap("n", "<A-k>", "<cmd>lua require('vscode').action('workbench.action.debug.continue')")
-keymap("n", "<A-h>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOut')")
-keymap("n", "<A-l>", "<cmd>lua require('vscode').action('workbench.action.debug.stepInto')")
-keymap("n", "<A-r>", "<cmd>lua require('vscode').action('workbench.action.debug.restart')")
+keymap("n", "<A-j>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOver')<CR>")
+keymap("n", "<A-k>", "<cmd>lua require('vscode').action('workbench.action.debug.continue')<CR>")
+keymap("n", "<A-h>", "<cmd>lua require('vscode').action('workbench.action.debug.stepOut')<CR>")
+keymap("n", "<A-l>", "<cmd>lua require('vscode').action('workbench.action.debug.stepInto')<CR>")
+keymap("n", "<A-r>", "<cmd>lua require('vscode').action('workbench.action.debug.restart')<CR>")
+keymap("n", "<A-c>", "<cmd>lua require('vscode').action('jupyter.debugcurrentcell.palette')<CR>")
 -- keymap("n", "<A-r>", "<cmd>lua require('vscode').action('workbench.action.debug.start')")
 
 
