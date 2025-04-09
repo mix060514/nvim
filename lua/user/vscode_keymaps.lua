@@ -2,6 +2,8 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local nopts = { remap = true, silent = true }
 
+-- ignore plugin update message
+vim.o.cmdheight=4
 
 -- ignorecase
 vim.o.ignorecase = true
