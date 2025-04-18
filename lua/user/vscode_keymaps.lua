@@ -9,6 +9,10 @@ vim.o.cmdheight=4
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+
+-- python print format
+keymap("n", "<leader>pf", "Iprint(f\"{<Esc>A =}\")<Esc>", opts)
+
 -- move between method in python .py file
 keymap("n", "<Bslash>", "]m", nopts)
 keymap("n", "<Bar>", "[m", nopts)
