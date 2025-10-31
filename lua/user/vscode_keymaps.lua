@@ -2,6 +2,10 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local nopts = { remap = true, silent = true }
 
+-- for fix griw
+vim.keymap.del('n','gri')
+vim.keymap.del('n','gra')
+
 -- ignore plugin update message
 vim.o.cmdheight=4
 
